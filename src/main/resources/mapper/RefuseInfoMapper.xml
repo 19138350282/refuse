@@ -5,9 +5,24 @@
 <mapper namespace="com.example.refuse.mapper.RefuseInfoMapper">
 
 <!-- 返回可回收物-->
-    <select id="" resultType="">
+    <select id="getrecyclable" resultType="RefuseInfo">
          select *
-         from trashtests
-         where refusenum = 1
+         from refuseinfo
+         where catenum = 1
+    </select>
+
+<!--  计算某一类垃圾的总数-->
+    <select id="getTotal" resultType="int">
+        select count(id)
+        from refuseinfo
+        where catenum = #{catenum}
+    </select>
+
+<!--  分页查询可回收垃圾-->
+    <select id="findByPage1" resultType="RefuseInfo">
+        select *
+        from refuseinfo
+        where catenum = #{catenum}
+        and limit (${pagenum}-1)*${pagesize},${pagesize}
     </select>
 </mapper>
