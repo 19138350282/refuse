@@ -8,9 +8,8 @@ import java.util.List;
 
 @Mapper
 public interface RefuseInfoMapper {
-    List<RefuseInfo> getrecyclable(Integer catenum);
 
     int getTotal(Integer catenum);
 
-    List<RefuseInfo> findByPage1(Integer catenum, Integer pagesize, Integer pagenum);
+    List<RefuseInfo> findByPage(Integer catenum, Integer pagesize, Integer offset);
 }

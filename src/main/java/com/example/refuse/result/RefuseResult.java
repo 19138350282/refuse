@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RecyclableResult {
+public class RefuseResult {
     private Integer code;
     private String msg;
     private Page<RefuseInfo> page;

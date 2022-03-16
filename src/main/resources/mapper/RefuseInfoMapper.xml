@@ -4,13 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.refuse.mapper.RefuseInfoMapper">
 
-<!-- 返回可回收物-->
-    <select id="getrecyclable" resultType="RefuseInfo">
-         select *
-         from refuseinfo
-         where catenum = 1
-    </select>
-
 <!--  计算某一类垃圾的总数-->
     <select id="getTotal" resultType="int">
         select count(id)
@@ -18,11 +11,11 @@
         where catenum = #{catenum}
     </select>
 
-<!--  分页查询可回收垃圾-->
-    <select id="findByPage1" resultType="RefuseInfo">
+<!--  分页查询垃圾-->
+    <select id="findByPage" resultType="RefuseInfo">
         select *
         from refuseinfo
         where catenum = #{catenum}
-        and limit (${pagenum}-1)*${pagesize},${pagesize}
+        limit #{offset},#{pagesize}
     </select>
 </mapper>
