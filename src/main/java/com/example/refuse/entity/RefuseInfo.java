@@ -12,8 +12,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class RefuseInfo {
-    private Integer id;
+public class RefuseInfo{
     private String refusename;
     private String refusecate;
     private Integer catenum;

@@ -13,6 +13,6 @@ import java.util.List;
 @Data
 public class Page<T> {
     private Integer total;
-    private String pagenum;
+    private Integer pagenum;
     private List<T> data;
 }

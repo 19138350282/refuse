@@ -6,7 +6,7 @@
 
 <!--  计算某一类垃圾的总数-->
     <select id="getTotal" resultType="int">
-        select count(id)
+        select count(refusename)
         from refuseinfo
         where catenum = #{catenum}
     </select>
