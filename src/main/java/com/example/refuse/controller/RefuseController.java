@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.InputMismatchException;
 import java.util.List;
 
 /**
@@ -22,17 +21,18 @@ public class RefuseController {
     @Autowired
     RefuseInfoMapper refuseInfoMapper;
 
-    @PostMapping("/recyclable")
+    @PostMapping("/recyclable")//??为什么是POST。。。Get不方便吗0.0
     public RefuseResult recyclable(@Param("refuse_id") Integer refuse_id, @Param("pagesize") Integer pagesize, @Param("pagenum") Integer pagenum){
+            if(refuse_id<1 || refuse_id>4 || pagesize<=0 || pagenum<=0){
+            return new RefuseResult(1000,"参数错误",null);
+            }
             List<RefuseInfo> list = refuseInfoMapper.findByPage(refuse_id,pagesize,(pagenum-1)*pagesize);
             Page<RefuseInfo> page=new Page<>();
             page.setData(list);
             int total = refuseInfoMapper.getTotal(refuse_id);
             page.setTotal(total);
             page.setPagenum(pagenum+1);
-            if(refuse_id==null || pagesize==null || pagenum==null){
-                return new RefuseResult(1000,"参数不完整",null);
-            }
+
             if(list.size()!=0){
                 return new RefuseResult(2000,"查找成功",page);
             }else{

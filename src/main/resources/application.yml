@@ -1,5 +1,11 @@
 server:
-  port: 9090
+  port: 443
+  ssl:
+    key-store-password: r2t3x0o8hwrv21b
+    key-store: classpath:api.garbage.medivh0930.top.jks
+    key-store-type: JKS
+    enabled: true
+http-port: 9093
 
 spring:
   datasource:
