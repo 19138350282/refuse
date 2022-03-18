@@ -21,7 +21,7 @@ public class RefuseController {
     @Autowired
     RefuseInfoMapper refuseInfoMapper;
 
-    @PostMapping("/recyclable")//??为什么是POST。。。Get不方便吗0.0
+    @PostMapping("/garbage")
     public RefuseResult recyclable(@Param("refuse_id") Integer refuse_id, @Param("pagesize") Integer pagesize, @Param("pagenum") Integer pagenum){
             if(refuse_id<1 || refuse_id>4 || pagesize<=0 || pagenum<=0){
             return new RefuseResult(1000,"参数错误",null);
@@ -31,7 +31,7 @@ public class RefuseController {
             page.setData(list);
             int total = refuseInfoMapper.getTotal(refuse_id);
             page.setTotal(total);
-            page.setPagenum(pagenum+1);
+            page.setPagenum(pagenum);
 
             if(list.size()!=0){
                 return new RefuseResult(2000,"查找成功",page);
