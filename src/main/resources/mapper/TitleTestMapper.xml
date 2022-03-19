@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.refuse.mapper.TitleTestMapper">
+
+    <select id="getQuestionList" resultType="com.example.refuse.vo.param.QuestionVo" >
+        select title from title_test limit #{offset},#{pagesize}
+    </select>
+
+    <select id="getAnswerList" resultType="com.example.refuse.vo.param.AnswerVo" >
+        select answer from title_test limit #{offset},#{pagesize}
+    </select>
+
+</mapper>
