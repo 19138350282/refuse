@@ -6,7 +6,6 @@ import com.example.refuse.result.Result;
 import com.example.refuse.vo.param.AnswerVo;
 import com.example.refuse.vo.param.QuestionVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class TitleTestController {
     public Result listTitle() {
         Integer pagenum =1, pagesize = 8 , offset;
         Random rand = new Random();
-       // pagenum = rand.nextInt(2) + 1;
+        pagenum = rand.nextInt(2) + 1;
         offset = (pagenum-1)*pagesize;
         List<QuestionVo> questionData = titleTestMapper.getQuestionList(pagesize,offset);
         List<AnswerVo> answerData = titleTestMapper.getAnswerList(pagesize,offset);

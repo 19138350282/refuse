@@ -18,4 +18,11 @@
         where catenum = #{catenum}
         limit #{offset},#{pagesize}
     </select>
+    
+<!--    通过垃圾名模糊查询-->
+    <select id="searchRefuse" resultType="com.example.refuse.vo.SearchInfo">
+        select refusename,refusecate
+        from refuseinfo
+        where refusename like '%${name}%'
+    </select>
 </mapper>
