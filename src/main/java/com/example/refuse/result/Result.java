@@ -22,8 +22,6 @@ public class Result implements Serializable {
     // 响应消息
     private String msg ;
 
-    private Integer pagenum;
-
     // 响应数据
 //    private Object title ;
 //
@@ -31,12 +29,12 @@ public class Result implements Serializable {
     private List<QuestionVo> title = new ArrayList<QuestionVo>();
     private List<AnswerVo> answer = new ArrayList<AnswerVo>();
 
-    public static Result success(Integer num , List<QuestionVo> data1 , List<AnswerVo> data2){
-        return new Result(200,"success",num,data1,data2);
+    public static Result success(List<QuestionVo> data1 , List<AnswerVo> data2){
+        return new Result(200,"success",data1,data2);
     }
 
-    public static Result fail(Integer num, int code, String msg){
-        return new Result(code,msg,num,null,null);
+    public static Result fail(int code, String msg){
+        return new Result(code,msg,null,null);
     }
 
 }

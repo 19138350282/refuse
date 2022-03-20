@@ -31,8 +31,8 @@ public class TitleTestController {
         List<QuestionVo> questionData = titleTestMapper.getQuestionList(pagesize,offset);
         List<AnswerVo> answerData = titleTestMapper.getAnswerList(pagesize,offset);
         if (questionData== null) {
-            return Result.fail(pagenum,404, null);
+            return Result.fail(404, null);
         }
-        return Result.success(pagenum,questionData,answerData);
+        return Result.success(questionData,answerData);
     }
 }
