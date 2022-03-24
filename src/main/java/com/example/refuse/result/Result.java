@@ -1,7 +1,7 @@
 package com.example.refuse.result;
 
-import com.example.refuse.vo.param.AnswerVo;
-import com.example.refuse.vo.param.QuestionVo;
+import com.example.refuse.vo.AnswerVo;
+import com.example.refuse.vo.QuestionVo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

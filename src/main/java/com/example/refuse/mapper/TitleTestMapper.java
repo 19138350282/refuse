@@ -1,8 +1,8 @@
 package com.example.refuse.mapper;
 
 
-import com.example.refuse.vo.param.AnswerVo;
-import com.example.refuse.vo.param.QuestionVo;
+import com.example.refuse.vo.AnswerVo;
+import com.example.refuse.vo.QuestionVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

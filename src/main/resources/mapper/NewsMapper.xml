@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.refuse.mapper.NewsMapper">
+
+<!--根据时间和id排序后分页返回-->
+    <select id="recoByPage" resultType="com.example.refuse.vo.NewsReco">
+        select id,picture,title,visitnum,time
+        from news
+        order by time desc,id asc
+        limit 0,5
+    </select>
+
+<!--将浏览量加1-->
+    <update id="addVisit">
+        update news
+        set visitnum = visitnum + 1
+        where id = #{id}
+    </update>
+
+<!--根据新闻id查找新闻-->
+    <select id="findNews" resultType="com.example.refuse.vo.NewsDet">
+        select title,picture,writer,time,content,visitnum
+        from news
+        where id = #{id}
+    </select>
+
+<!--首页新闻推荐最新的前三条-->
+    <select id="topicByPage" resultType="com.example.refuse.vo.NewsTopic">
+        select picture,title,id
+        from news
+        order by time desc,id asc
+        limit 0,3
+    </select>
+
+</mapper>

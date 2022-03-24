@@ -3,8 +3,8 @@ package com.example.refuse.controller;
 
 import com.example.refuse.mapper.TitleTestMapper;
 import com.example.refuse.result.Result;
-import com.example.refuse.vo.param.AnswerVo;
-import com.example.refuse.vo.param.QuestionVo;
+import com.example.refuse.vo.AnswerVo;
+import com.example.refuse.vo.QuestionVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

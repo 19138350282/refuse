@@ -25,7 +25,7 @@ public class RefuseController {
     RefuseInfoMapper refuseInfoMapper;
 
     @PostMapping("/garbage")
-    public RefuseResult recyclable(@Param("refuse_id") Integer refuse_id, @Param("pagesize") Integer pagesize, @Param("pagenum") Integer pagenum){
+    public RefuseResult findRefuse(@Param("refuse_id") Integer refuse_id, @Param("pagesize") Integer pagesize, @Param("pagenum") Integer pagenum){
             if(refuse_id<1 || refuse_id>4 || pagesize<=0 || pagenum<=0){
             return new RefuseResult(1000,"参数错误",null);
             }

@@ -1,4 +1,4 @@
-package com.example.refuse.vo.param;
+package com.example.refuse.vo;
 
 import lombok.Data;
 
