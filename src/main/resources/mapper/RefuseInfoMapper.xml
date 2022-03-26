@@ -20,8 +20,8 @@
     </select>
     
 <!--    通过垃圾名模糊查询-->
-    <select id="searchRefuse" resultType="com.example.refuse.vo.SearchInfo">
-        select refusename,refusecate
+    <select id="searchRefuse" resultType="RefuseInfo">
+        select *
         from refuseinfo
         where refusename like '%${name}%'
     </select>

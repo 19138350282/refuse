@@ -1,6 +1,6 @@
 package com.example.refuse.result;
 
-import com.example.refuse.vo.SearchInfo;
+import com.example.refuse.entity.RefuseInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +19,5 @@ import java.util.List;
 public class SearchResult {
     private Integer code;
     private String msg;
-    private List<SearchInfo> data = new ArrayList();
+    private List<RefuseInfo> data = new ArrayList();
 }

@@ -12,4 +12,9 @@
         select answer from title_test limit #{offset},#{pagesize}
     </select>
 
+    <select id="countTitle" resultType="int">
+        select count(title)
+        from title_test
+    </select>
+
 </mapper>

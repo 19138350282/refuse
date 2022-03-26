@@ -37,13 +37,17 @@ public class UserController {
         JSONObject SessionKeyOpenId = WeChatUtil.getSessionKeyOrOpenId(code);
         // 3.接收微信接口服务 获取返回的参数
         String openid = SessionKeyOpenId.getString("openid");
+        if(openid==null||openid.equals(""))
+        {
+            return GlobalResult.build(200000,"获取不到openid",openid);
+        }
         String sessionKey = SessionKeyOpenId.getString("session_key");
 
         //  4.校验签名 小程序发送的签名signature与服务器端生成的签名signature2 = sha1(rawData + sessionKey)
         String signature2 = DigestUtils.sha1Hex(rawData + sessionKey);
-//        if (!signature.equals(signature2)) {
-//           return GlobalResult.build(500, "签名校验失败", null);
-//        }
+        if (!signature.equals(signature2)) {
+           return GlobalResult.build(500, "签名校验失败", null);
+        }
         // 5.根据返回的User实体类，判断用户是否是新用户，是的话，将用户信息存到数据库；不是的话，更新最新登录时间
         User user = this.userMapper.queryById(openid);
         // uuid生成唯一key，用于维护微信小程序用户与服务端的会话

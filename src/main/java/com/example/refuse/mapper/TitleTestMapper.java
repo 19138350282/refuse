@@ -13,4 +13,6 @@ public interface TitleTestMapper {
      List<QuestionVo> getQuestionList(Integer pagesize, Integer offset);
 
      List<AnswerVo> getAnswerList(Integer pagesize, Integer offset);
+
+    int countTitle();
 }

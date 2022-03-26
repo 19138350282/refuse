@@ -24,9 +24,17 @@ public class TitleTestController {
     @GetMapping("/test")
     @ResponseBody
     public Result listTitle() {
-        Integer pagenum =1, pagesize = 8 , offset;
+        Integer pagenum =1, pagesize = 8 , offset,count;
+        count=titleTestMapper.countTitle();
+        if(count-8<0)
+        {
+            count=1;
+        }
+        else {
+            count = count - 8;
+        }
         Random rand = new Random();
-        pagenum = rand.nextInt(2) + 1;
+        pagenum = rand.nextInt(count) + 1;
         offset = (pagenum-1)*pagesize;
         List<QuestionVo> questionData = titleTestMapper.getQuestionList(pagesize,offset);
         List<AnswerVo> answerData = titleTestMapper.getAnswerList(pagesize,offset);

@@ -5,7 +5,6 @@ import com.example.refuse.mapper.RefuseInfoMapper;
 import com.example.refuse.result.RefuseResult;
 import com.example.refuse.result.SearchResult;
 import com.example.refuse.vo.Page;
-import com.example.refuse.vo.SearchInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +47,7 @@ public class RefuseController {
         if(name==null){
             return new SearchResult(1000,"请输入垃圾名信息",null);
         }
-        List<SearchInfo> list = refuseInfoMapper.searchRefuse(name);
+        List<RefuseInfo> list = refuseInfoMapper.searchRefuse(name);
         if(list.size()!=0){
             return new SearchResult(2000,"查找成功",list);
         }else{

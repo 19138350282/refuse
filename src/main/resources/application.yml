@@ -1,10 +1,10 @@
 server:
   port: 9999
   ssl:
-    key-store-password: r2t3x0o8hwrv21b
-    key-store: classpath:api.garbage.medivh0930.top.jks
-    key-store-type: JKS
-    enabled: true
+   key-store-password: r2t3x0o8hwrv21b
+   key-store: classpath:api.garbage.medivh0930.top.jks
+   key-store-type: JKS
+   enabled: true
 
 spring:
   datasource:
