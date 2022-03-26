@@ -25,9 +25,12 @@ public class RefuseController {
 
     @PostMapping("/garbage")
     public RefuseResult findRefuse(@Param("refuse_id") Integer refuse_id, @Param("pagesize") Integer pagesize, @Param("pagenum") Integer pagenum){
-            if(refuse_id<1 || refuse_id>4 || pagesize<=0 || pagenum<=0){
+          if(refuse_id==null || pagesize==null || pagenum==null){
+            return new RefuseResult(1001,"参数不完整",null);
+          }
+          if(refuse_id<1 || refuse_id>4 || pagesize<=0 || pagenum<=0){
             return new RefuseResult(1000,"参数错误",null);
-            }
+          }
             List<RefuseInfo> list = refuseInfoMapper.findByPage(refuse_id,pagesize,(pagenum-1)*pagesize);
             Page<RefuseInfo> page=new Page<>();
             page.setData(list);

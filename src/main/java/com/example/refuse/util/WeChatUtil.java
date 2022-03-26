@@ -1,4 +1,4 @@
-package com.example.refuse.utils;
+package com.example.refuse.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -38,9 +38,9 @@ public class WeChatUtil {
         return jsonObject;
     }
 
-    public static JSONObject getUserInfo(String encryptedData, String sessionKey, String iv) {
+    public static JSONObject getUserInfo(String encrypteData, String sessionKey, String iv) {
         // 被加密的数据
-        byte[] dataByte = Base64.decode(encryptedData);
+        byte[] dataByte = Base64.decode(encrypteData);
         // 加密秘钥
         byte[] keyByte = Base64.decode(sessionKey);
         // 偏移量
