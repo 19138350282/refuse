@@ -38,9 +38,9 @@ public class WeChatUtil {
         return jsonObject;
     }
 
-    public static JSONObject getUserInfo(String encrypteData, String sessionKey, String iv) {
+    public static JSONObject getUserInfo(String encryptedData, String sessionKey, String iv) {
         // 被加密的数据
-        byte[] dataByte = Base64.decode(encrypteData);
+        byte[] dataByte = Base64.decode(encryptedData);
         // 加密秘钥
         byte[] keyByte = Base64.decode(sessionKey);
         // 偏移量

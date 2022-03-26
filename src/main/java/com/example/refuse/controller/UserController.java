@@ -86,13 +86,7 @@ public class UserController {
         }
         //encrypteData比rowData多了appid和openid
         JSONObject userInfo = new JSONObject();
-        if(userRequest.getEncrypteData()==null){
-            return GlobalResult.build(1100, "encrypteDate为空", null);
-        }
-        if(userRequest.getIv()==null){
-            return GlobalResult.build(1100, "iv为空", null);
-        }
-        userInfo = WeChatUtil.getUserInfo(userRequest.getEncrypteData(), sessionKey, userRequest.getIv());
+        userInfo = WeChatUtil.getUserInfo(userRequest.getEncryptedData(), sessionKey, userRequest.getIv());
         if(userInfo==null){
             return GlobalResult.build(1100, "userInfo为空", null);
         }

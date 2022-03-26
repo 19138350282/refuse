@@ -15,6 +15,6 @@ public class UserRequest {
     private String code;
     private String rawData;
     private String signature;
-    private String encrypteData;
+    private String encryptedData;
     private String iv;
 }
