@@ -1,6 +1,5 @@
 package com.example.refuse.controller;
 
-import com.example.refuse.entity.News;
 import com.example.refuse.mapper.NewsMapper;
 import com.example.refuse.result.NewsDetResult;
 import com.example.refuse.result.NewsRecoResult;

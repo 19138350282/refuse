@@ -1,23 +1,21 @@
 package com.example.refuse.result;
 
-import com.example.refuse.vo.NewsReco;
+import com.example.refuse.vo.GoodsInfo;
+import com.example.refuse.vo.Page;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @Description: TODO
  * @author: scott
- * @date: 2022年03月21日 17:26
+ * @date: 2022年03月27日 21:59
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NewsRecoResult {
+public class GoodsListResult {
     private Integer code;
     private String msg;
-    private List<NewsReco> data = new ArrayList();
+    private Page<GoodsInfo> page;
 }

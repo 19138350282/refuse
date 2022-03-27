@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.refuse.mapper.GoodsMapper">
+<!--查找商品总数-->
+    <select id="getTotal" resultType="int">
+        select count(id)
+        from goods
+    </select>
+
+<!--分页返回商品-->
+    <select id="findByPage" resultType="com.example.refuse.vo.GoodsInfo">
+        select id,name,score,deadtime,thumbnail
+        from goods
+        limit #{offset},#{pagesize}
+    </select>
+
+<!--根据id查找商品信息-->
+    <select id="findName" resultType="String">
+        select name
+        from goods
+        where id = #{goods_id}
+    </select>
+
+    <select id="findRotation" resultType="com.example.refuse.vo.Rotation">
+        select picture
+        from rotation_picture
+        where goods_id = #{goods_id}
+    </select>
+
+    <select id="findScore" resultType="Integer">
+        select score
+        from goods
+        where id = #{goods_id}
+    </select>
+
+    <select id="findNumber" resultType="Integer">
+        select number
+        from goods
+        where id = #{goods_id}
+    </select>
+
+    <select id="findDeadtime" resultType="Date">
+        select deadtime
+        from goods
+        where id = #{goods_id}
+    </select>
+
+    <select id="findDetails" resultType="com.example.refuse.vo.Details">
+        select picture
+        from detail_picture
+        where goods_id = #{goods_id}
+    </select>
+
+    <select id="findToppic" resultType="com.example.refuse.vo.Toppic">
+        select picture
+        from toppicture
+    </select>
+</mapper>

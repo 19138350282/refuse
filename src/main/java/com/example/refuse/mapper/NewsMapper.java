@@ -1,6 +1,5 @@
 package com.example.refuse.mapper;
 
-import com.example.refuse.entity.News;
 import com.example.refuse.vo.NewsDet;
 import com.example.refuse.vo.NewsReco;
 import com.example.refuse.vo.NewsTopic;
